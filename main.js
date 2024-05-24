@@ -3,8 +3,21 @@ const price = document.getElementById('price');
 const selectCategory = document.getElementById('selectCategory');
 const inputBtn = document.getElementById('addBtn');
 const tbody = document.getElementById('tbody');
+const purcashesItem = document.querySelectorAll('purcashesItem');
 //const itemDel = document.querySelectorAll('i.itemDel');
+const legendProduct = document.getElementById('legendProduct');
+const legendProductPrice = document.getElementById('legendProductPrice');
+const legendFastfood = document.getElementById('legendFastfood');
+const legendFastfoodPrice = document.getElementById('legendFastfoodPrice');
+const legendSport = document.getElementById('legendSport');
+const legendSportPrice = document.getElementById('legendSportPrice');
+const legendDrinks = document.getElementById('legendDrinks');
+const legendDrinksPrice = document.getElementById('legendDrinksPrice');
+const purcashesPrice = document.querySelector('purcashesPrice');
 
+
+// массив данных
+let productArray = [];
 
 let purcashesItemDel
 inputBtn.addEventListener('click', (e) => {
@@ -32,6 +45,7 @@ inputBtn.addEventListener('click', (e) => {
     let purcashes3 = document.createElement('td');
     purcashes.appendChild(purcashes3);
     purcashes3.classList.add('purcashes__td');
+    purcashes3.classList.add('purcashesPrice');
 
     // четвертый столбец таблицы
     let purcashes4 = document.createElement('td');
@@ -49,17 +63,71 @@ inputBtn.addEventListener('click', (e) => {
     // Добавление выбранных параметров
     purcashes1.textContent = inputName.value;
     purcashes3.textContent = price.value
-    if (selectCategory.value == 'poduct') { purcashes2.textContent = 'Продукты' }
-    else if (selectCategory.value == 'fastFood') { purcashes2.textContent = 'Фастфуд' }
-    else if (selectCategory.value == 'sport') { purcashes2.textContent = 'Спорт' }
-    else if (selectCategory.value == 'drinks') { purcashes2.textContent = 'Напитки' };
 
+    if (selectCategory.value == 'poduct') {
+        purcashes2.textContent = 'Продукты';
+        legendProductPrice.textContent = Number(price.value) + Number(legendProductPrice.textContent);
+    }
+    else if (selectCategory.value == 'fastFood') {
+        purcashes2.textContent = 'Фастфуд';
+        legendFastfoodPrice.textContent = Number(price.value) + Number(legendFastfoodPrice.textContent);
+
+    }
+    else if (selectCategory.value == 'sport') {
+        purcashes2.textContent = 'Спорт';
+        legendSportPrice.textContent = Number(price.value) + Number(legendSportPrice.textContent);
+    }
+    else if (selectCategory.value == 'drinks') {
+        purcashes2.textContent = 'Напитки';
+        legendDrinksPrice.textContent = Number(price.value) + Number(legendDrinksPrice.textContent);
+    };
+
+    // занесение в массив
+    //productArray.
+    //productArray.push(product)
+
+
+    // Кнопка удаления
     purcashesItemDel.addEventListener('click', () => {
+        if (purcashes2.textContent == legendProduct.textContent) {
+            legendProductPrice.textContent = Number(legendProductPrice.textContent) - Number(purcashes3.textContent);
+        } else if (purcashes2.textContent == legendDrinks.textContent) {
+            legendDrinksPrice.textContent = Number(legendDrinksPrice.textContent) - Number(purcashes3.textContent);
+        } else if (purcashes2.textContent == legendFastfood.textContent) {
+            legendFastfoodPrice.textContent = Number(legendFastfoodPrice.textContent) - Number(purcashes3.textContent);
+        } else if (purcashes2.textContent == legendSport.textContent) {
+            legendSportPrice.textContent = Number(legendSportPrice.textContent) - Number(purcashes3.textContent);
+        }
+
+        console.log(Number(legendFastfoodPrice.textContent) - Number(purcashes3.textContent));
+        console.log(purcashes2.textContent);
+
+
+        console.log(purcashes3.textContent);
+        //purcashes.textContent = 'asd';
+        console.log(purcashes2.textContent);
         purcashes.remove(purcashes)
     });
+
+
+
     // Сохранение параметров в памяти
+    console.log(purcashesItem)
+
 
 });
+
+let df = [
+    {
+        pivi: "di"
+    },
+]
+df.ret = true;
+
+
+//достаем из массива di
+
+console.log(df);
 
 //const purcashesTable = document.getElementById('purcashes');
 
