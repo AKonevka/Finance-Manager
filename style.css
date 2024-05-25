@@ -75,7 +75,6 @@ h3 {
 .unit:nth-child(1) {
     stroke: green;
     /* stroke-dasharray: 10 100; */
-
 }
 
 .unit:nth-child(2) {
@@ -95,6 +94,49 @@ h3 {
     /* stroke-dasharray: 20 100;
     stroke-dashoffset: -80; */
 }
+
+
+/*.unit:nth-child(1) {
+    stroke: green;
+    stroke-dasharray: 10 100; 
+}
+
+.unit:nth-child(2) {
+    stroke: rgb(255, 174, 0);
+    stroke-dasharray: 10 100;
+    stroke-dashoffset: -5; 
+}
+
+.unit:nth-child(3) {
+    stroke: aqua;
+    stroke-dasharray: 10 100;
+    stroke-dashoffset: -10; 
+}
+
+.unit:nth-child(4) {
+    stroke: violet;
+    stroke-dasharray: 10 100;
+    stroke-dashoffset: -15; 
+}
+
+.unit:nth-child(5) {
+    stroke: red;
+    stroke-dasharray: 10 100;
+    stroke-dashoffset: -30; 
+}
+
+.unit:nth-child(6) {
+    stroke: darkblue;
+    stroke-dasharray: 10 100;
+    stroke-dashoffset: -60; 
+}
+
+*/
+
+
+
+
+
 
 
 .legend__list {
@@ -144,6 +186,13 @@ h3 {
     background-color: violet;
 }
 
+.legend__item[data-category="household"] ::before {
+    background-color: red;
+}
+
+.legend__item[data-category="cloth"] ::before {
+    background-color: darkblue;
+}
 .purcashes {
     flex: 1;
     display: flex;
@@ -184,6 +233,14 @@ h3 {
 
 .purcashes__item[data-category="drinks"] {
     border-left: 5px solid violet;
+}
+
+.purcashes__item[data-category="household"] {
+    border-left: 5px solid red;
+}
+
+.purcashes__item[data-category="cloth"] {
+    border-left: 5px solid darkblue;
 }
 
 .purcashes__item .purcashes__item-del {

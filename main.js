@@ -14,6 +14,10 @@ const legendSportPrice = document.getElementById('legendSportPrice');
 const legendDrinks = document.getElementById('legendDrinks');
 const legendDrinksPrice = document.getElementById('legendDrinksPrice');
 const purcashesPrice = document.querySelector('purcashesPrice');
+const legendHousehold = document.getElementById('legendHousehold');
+const legendHouseholdPrice = document.getElementById('legendHouseholdPrice');
+const legendCloth = document.getElementById('legendCloth');
+const legendClothPrice = document.getElementById('legendClothPrice');
 
 
 // массив данных
@@ -71,7 +75,6 @@ inputBtn.addEventListener('click', (e) => {
     else if (selectCategory.value == 'fastFood') {
         purcashes2.textContent = 'Фастфуд';
         legendFastfoodPrice.textContent = Number(price.value) + Number(legendFastfoodPrice.textContent);
-
     }
     else if (selectCategory.value == 'sport') {
         purcashes2.textContent = 'Спорт';
@@ -80,32 +83,46 @@ inputBtn.addEventListener('click', (e) => {
     else if (selectCategory.value == 'drinks') {
         purcashes2.textContent = 'Напитки';
         legendDrinksPrice.textContent = Number(price.value) + Number(legendDrinksPrice.textContent);
+    }   
+    else if (selectCategory.value == 'household') {
+        purcashes2.textContent = 'Хозяйственные товары';
+        legendHouseholdPrice.textContent = Number(price.value) + Number(legendHouseholdPrice.textContent);
+    }
+    else if (selectCategory.value == 'cloth') {
+        purcashes2.textContent = 'Одежда';
+        legendClothPrice.textContent = Number(price.value) + Number(legendClothPrice.textContent);
     };
-
-    // занесение в массив
-    //productArray.
-    //productArray.push(product)
-
 
     // Кнопка удаления
     purcashesItemDel.addEventListener('click', () => {
+        // Если удалена категория продуктов
         if (purcashes2.textContent == legendProduct.textContent) {
             legendProductPrice.textContent = Number(legendProductPrice.textContent) - Number(purcashes3.textContent);
-        } else if (purcashes2.textContent == legendDrinks.textContent) {
+        } // Если удалена категория напитков
+        else if (purcashes2.textContent == legendDrinks.textContent) {
             legendDrinksPrice.textContent = Number(legendDrinksPrice.textContent) - Number(purcashes3.textContent);
-        } else if (purcashes2.textContent == legendFastfood.textContent) {
-            legendFastfoodPrice.textContent = Number(legendFastfoodPrice.textContent) - Number(purcashes3.textContent);
-        } else if (purcashes2.textContent == legendSport.textContent) {
+        } // Если удалена категория спорта 
+        else if (purcashes2.textContent == legendSport.textContent) {
             legendSportPrice.textContent = Number(legendSportPrice.textContent) - Number(purcashes3.textContent);
+        } // Если удалена категория хозяйственных товаров
+        else if (purcashes2.textContent == legendHousehold.textContent) {
+            legendHouseholdPrice.textContent = Number(legendHouseholdPrice.textContent) - Number(purcashes3.textContent);
+        }
+        else if (purcashes2.textContent == legendCloth.textContent) {
+            legendClothPrice.textContent = Number(legendClothPrice.textContent) - Number(purcashes3.textContent);
+        }
+         // Если удалена категория фастфуда
+        else {
+            legendFastfoodPrice.textContent = Number(legendFastfoodPrice.textContent) - Number(purcashes3.textContent);
         }
 
-        console.log(Number(legendFastfoodPrice.textContent) - Number(purcashes3.textContent));
-        console.log(purcashes2.textContent);
+        //console.log(Number(legendFastfoodPrice.textContent) - Number(purcashes3.textContent));
+        //console.log(purcashes2.textContent);
 
 
-        console.log(purcashes3.textContent);
+        //console.log(purcashes3.textContent);
         //purcashes.textContent = 'asd';
-        console.log(purcashes2.textContent);
+        //console.log(purcashes2.textContent);
         purcashes.remove(purcashes)
     });
 
