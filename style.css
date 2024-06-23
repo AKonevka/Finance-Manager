@@ -27,6 +27,9 @@ h3 {
 }
 
 .wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     min-height: 100%;
     background-color: rgb(0, 0, 0);
     color: white;
@@ -46,7 +49,7 @@ h3 {
 }
 
 .main__column {
-    background-color: rgb(104, 104, 104);
+    background-color: rgb(48, 78, 214);
     border-radius: 10px;
     padding: 10px;
 }
@@ -67,6 +70,15 @@ h3 {
     max-width: 800px;
 }
 
+.main__result-and-purcashes {
+    display: flex;
+    flex-direction: column;
+}
+
+.main__result {
+    display: flex;
+}
+
 .unit {
     fill: none;
     stroke-width: 10;
@@ -74,39 +86,41 @@ h3 {
 
 .unit:nth-child(1) {
     stroke: green;
-    /* stroke-dasharray: 10 100; */
+    stroke-dasharray: 8 100;
 }
 
 .unit:nth-child(2) {
     stroke: rgb(255, 174, 0);
-    /* stroke-dasharray: 20 100;
-    stroke-dashoffset: -10; */
+    stroke-dasharray: 11 100;
+    stroke-dashoffset: -8;
 }
 
 .unit:nth-child(3) {
     stroke: aqua;
-    /* stroke-dasharray: 50 100;
-    stroke-dashoffset: -30; */
+    stroke-dasharray: 11 100;
+    stroke-dashoffset: -19;
 }
 
 .unit:nth-child(4) {
     stroke: violet;
-    /* stroke-dasharray: 20 100;
-    stroke-dashoffset: -80; */
+    stroke-dasharray: 11 100;
+    stroke-dashoffset: -30;
 }
 
 
-/*.unit:nth-child(1) {
-    stroke: green;
-    stroke-dasharray: 10 100; 
+.unit:nth-child(5) {
+    stroke: red;
+    stroke-dasharray: 11 100;
+    stroke-dashoffset: -41;
 }
 
-.unit:nth-child(2) {
-    stroke: rgb(255, 174, 0);
-    stroke-dasharray: 10 100;
-    stroke-dashoffset: -5; 
+.unit:nth-child(6) {
+    stroke: darkblue;
+    stroke-dasharray: 30 100;
+    stroke-dashoffset: -52;
 }
 
+/*
 .unit:nth-child(3) {
     stroke: aqua;
     stroke-dasharray: 10 100;
@@ -137,12 +151,15 @@ h3 {
 
 
 
-
+.legend {
+    display: flex;
+}
 
 .legend__list {
     display: flex;
     flex-direction: column;
     row-gap: 5px;
+    margin-right: 10px;
 }
 
 .legend__item {
@@ -152,7 +169,7 @@ h3 {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: rgb(36, 36, 36);
+    background-color: rgb(70, 66, 66);
     border-radius: 5px;
 }
 
@@ -184,6 +201,9 @@ h3 {
 
 .legend__item[data-category="drinks"] ::before {
     background-color: violet;
+    /*background: url(../Finance-Manager-main/img/Drink.png);
+    width: 30px;
+    height: 30px;*/
 }
 
 .legend__item[data-category="household"] ::before {
@@ -193,6 +213,7 @@ h3 {
 .legend__item[data-category="cloth"] ::before {
     background-color: darkblue;
 }
+
 .purcashes {
     flex: 1;
     display: flex;
@@ -207,7 +228,7 @@ h3 {
 
 .purcashes__row {
     text-align: center;
-    background-color: rgb(36, 36, 36);
+    background-color: rgb(70, 66, 66);
 }
 
 .purcashes__row td {
@@ -232,6 +253,7 @@ h3 {
 }
 
 .purcashes__item[data-category="drinks"] {
+
     border-left: 5px solid violet;
 }
 
@@ -258,14 +280,22 @@ h3 {
 }
 
 .editor__form {
+
     padding: 10px;
 }
 
 .editor__form-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 .editor__form-input-name {
+    background-color: rgb(49, 179, 179);
+    border-radius: 7px;
+    padding: 1px 5px 1px 5px;
     margin-top: 0px;
     margin-bottom: 5px;
 }
@@ -293,7 +323,7 @@ h3 {
 }
 
 .btn {
-    background: rgb(36, 36, 36);
+    background: rgb(31, 168, 168);
     color: white;
     padding: 10px 20px;
     border: none;
@@ -301,6 +331,6 @@ h3 {
 }
 
 .btn:hover {
-    background: rgb(58, 58, 58);
+    background: rgb(25, 129, 129);
     cursor: pointer;
 }

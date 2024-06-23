@@ -17,78 +17,83 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <h1 class="header__name">WALLET</h1>
+            <h1 class="header__name">Менеджер расходов</h1>
         </header>
         <div class="main">
-            <div class="main__column main__result">
-                <div class="diagram-block">
-                    <h2 class="diagram-title">Диаграмма расходов</h2>
-                    <div class="canvas">
+            <div class="main__result-and-purcashes">
+                <div class="main__column main__result">
+                    <div class="diagram-block">
+                        <h2 class="diagram-title">Диаграмма расходов</h2>
                         <div class="canvas">
-                            <svg class="chart" width="300" height="300" viewBox="0 0 50 50">
-                                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
-                                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
-                                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
-                                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
-                                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
-                                <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
-                            </svg>
-                        </div>
+                            <div class="canvas">
+                                <svg class="chart" width="300" height="300" viewBox="0 0 50 50">
+                                    <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+                                    <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+                                    <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+                                    <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+                                    <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+                                    <circle class="unit" r="15.9" cx="50%" cy="50%"></circle>
+                                </svg>
+                            </div>
 
+                        </div>
+                    </div>
+                    <div class="legend">
+                        <ul class="legend__list">
+                            <li class="legend__item" data-category="product">
+                                <span id="legendProduct" class="legend__category">Продукты</span>
+                                <span id="legendProductPrice" class="legend__price" data-price="product">0</span>
+                            </li>
+                            <li class="legend__item" data-category="fastfood">
+                                <span id="legendFastfood" class="legend__category">ФастФуд</span>
+                                <span id="legendFastfoodPrice" class="legend__price">0</span>
+                            </li>
+                            <li class="legend__item" data-category="sport">
+                                <span id="legendSport" class="legend__category">Спорт</span>
+                                <span id="legendSportPrice" class="legend__price">0</span>
+                            </li>
+                        </ul>
+                        <ul class="legend__list">
+                            <li class="legend__item" data-category="drinks">
+                                <span id="legendDrinks" class="legend__category">Напитки</span>
+                                <span id="legendDrinksPrice" class="legend__price">0</span>
+                            </li>
+                            <li class="legend__item" data-category="household">
+                                <span id="legendHousehold" class="legend__category">Хозяйственные товары</span>
+                                <span id="legendHouseholdPrice" class="legend__price">0</span>
+                            </li>
+                            <li class="legend__item" data-category="cloth">
+                                <span id="legendCloth" class="legend__category">Одежда</span>
+                                <span id="legendClothPrice" class="legend__price">0</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="legend">
-                    <ul class="legend__list">
-                        <li class="legend__item" data-category="product">
-                            <span id="legendProduct" class="legend__category">Продукты</span>
-                            <span id="legendProductPrice" class="legend__price" data-price="product">0</span>
-                        </li>
-                        <li class="legend__item" data-category="fastfood">
-                            <span id="legendFastfood" class="legend__category">ФастФуд</span>
-                            <span id="legendFastfoodPrice" class="legend__price">0</span>
-                        </li>
-                        <li class="legend__item" data-category="sport">
-                            <span id="legendSport" class="legend__category">Спорт</span>
-                            <span id="legendSportPrice" class="legend__price">0</span>
-                        </li>
-                        <li class="legend__item" data-category="drinks">
-                            <span id="legendDrinks" class="legend__category">Напитки</span>
-                            <span id="legendDrinksPrice" class="legend__price">0</span>
-                        </li>
-                        <li class="legend__item" data-category="household">
-                            <span id="legendHousehold" class="legend__category">Хозяйственные товары</span>
-                            <span id="legendHouseholdPrice" class="legend__price">0</span>
-                        </li>
-                        <li class="legend__item" data-category="cloth">
-                            <span id="legendCloth" class="legend__category">Одежда</span>
-                            <span id="legendClothPrice" class="legend__price">0</span>
-                        </li>
-                    </ul>
+                <div class="main__column purcashes">
+                    <table class="purcashes__table">
+                        <thead class="purcashes__header">
+                            <tr class="purcashes__row">
+                                <td class="purcashes__td">Наименование</td>
+                                <td class="purcashes__td">Категория</td>
+                                <td class="purcashes__td">Цена</td>
+                                <td class="purcashes__td"></td>
+                            </tr>
+                        </thead>
+
+                        <tbody class="purcashes__list" id="tbody">
+                            <!--
+                            <tr class="purcashes__item purcashes__row" data-category="product">
+                                <td class="purcashes__td">Вода</td>
+                                <td class="purcashes__td">Напитки</td>
+                                <td class="purcashes__td">1200</td>
+                                <td class="purcashes__td"><i class="itemDel purcashes__item-del fa-solid fa-xmark"></i>
+                                </td>
+                            </tr>-->
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div class="main__column purcashes">
-                <table class="purcashes__table">
-                    <thead class="purcashes__header">
-                        <tr class="purcashes__row">
-                            <td class="purcashes__td">Наименование</td>
-                            <td class="purcashes__td">Категория</td>
-                            <td class="purcashes__td">Цена</td>
-                            <td class="purcashes__td"></td>
-                        </tr>
-                    </thead>
 
-                    <tbody class="purcashes__list" id="tbody">
-                        <!--
-                        <tr class="purcashes__item purcashes__row" data-category="product">
-                            <td class="purcashes__td">Вода</td>
-                            <td class="purcashes__td">Напитки</td>
-                            <td class="purcashes__td">1200</td>
-                            <td class="purcashes__td"><i class="itemDel purcashes__item-del fa-solid fa-xmark"></i>
-                            </td>
-                        </tr>-->
-                    </tbody>
-                </table>
-            </div>
             <div class="main__column editor">
                 <form class="editor__form" name="form">
                     <div class="editor__form-row">
